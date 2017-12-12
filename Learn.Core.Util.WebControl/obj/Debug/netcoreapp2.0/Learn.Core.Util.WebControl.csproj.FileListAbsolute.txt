@@ -1,0 +1,11 @@
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\obj\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.csproj.CoreCompileInputs.cache
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\obj\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.AssemblyInfoInputs.cache
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\obj\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.AssemblyInfo.cs
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\bin\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.deps.json
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\bin\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.dll
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\bin\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.pdb
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\bin\Debug\netcoreapp2.0\Learn.Core.Util.dll
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\bin\Debug\netcoreapp2.0\Learn.Core.Util.pdb
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\obj\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.csprojResolveAssemblyReference.cache
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\obj\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.dll
+D:\projects\Learn.Core\Learn.Core.Util.WebControl\obj\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.pdb

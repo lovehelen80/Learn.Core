@@ -1,0 +1,11 @@
+D:\projects\Learn.Core\Learn.API\bin\Debug\netcoreapp2.0\Learn.Core.API.deps.json
+D:\projects\Learn.Core\Learn.API\bin\Debug\netcoreapp2.0\Learn.Core.API.runtimeconfig.json
+D:\projects\Learn.Core\Learn.API\bin\Debug\netcoreapp2.0\Learn.Core.API.runtimeconfig.dev.json
+D:\projects\Learn.Core\Learn.API\bin\Debug\netcoreapp2.0\Learn.Core.API.dll
+D:\projects\Learn.Core\Learn.API\bin\Debug\netcoreapp2.0\Learn.Core.API.pdb
+D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.csproj.CoreCompileInputs.cache
+D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.AssemblyInfoInputs.cache
+D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.AssemblyInfo.cs
+D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.dll
+D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.pdb
+D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.csprojResolveAssemblyReference.cache

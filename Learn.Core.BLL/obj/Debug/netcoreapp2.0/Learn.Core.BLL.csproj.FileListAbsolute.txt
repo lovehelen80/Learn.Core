@@ -1,0 +1,9 @@
+D:\projects\Learn.Core\Learn.Core.BLL\bin\Debug\netcoreapp2.0\Learn.Core.BLL.deps.json
+D:\projects\Learn.Core\Learn.Core.BLL\bin\Debug\netcoreapp2.0\Learn.Core.BLL.dll
+D:\projects\Learn.Core\Learn.Core.BLL\bin\Debug\netcoreapp2.0\Learn.Core.BLL.pdb
+D:\projects\Learn.Core\Learn.Core.BLL\obj\Debug\netcoreapp2.0\Learn.Core.BLL.csproj.CoreCompileInputs.cache
+D:\projects\Learn.Core\Learn.Core.BLL\obj\Debug\netcoreapp2.0\Learn.Core.BLL.AssemblyInfoInputs.cache
+D:\projects\Learn.Core\Learn.Core.BLL\obj\Debug\netcoreapp2.0\Learn.Core.BLL.AssemblyInfo.cs
+D:\projects\Learn.Core\Learn.Core.BLL\obj\Debug\netcoreapp2.0\Learn.Core.BLL.dll
+D:\projects\Learn.Core\Learn.Core.BLL\obj\Debug\netcoreapp2.0\Learn.Core.BLL.pdb
+D:\projects\Learn.Core\Learn.Core.BLL\obj\Debug\netcoreapp2.0\Learn.Core.BLL.csprojResolveAssemblyReference.cache
