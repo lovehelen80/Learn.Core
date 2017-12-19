@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Learn.Core.Util.WebControl\Learn.Core.Util.WebControl.csproj" />
+    <ProjectReference Include="..\Learn.Core.Util\Learn.Core.Util.csproj" />
     <ProjectReference Include="..\Learn.Data.Dapper\Learn.Data.Dapper.csproj" />
     <ProjectReference Include="..\Learn.Data\Learn.Data.csproj" />
   </ItemGroup>

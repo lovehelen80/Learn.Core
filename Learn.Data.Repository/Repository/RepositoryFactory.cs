@@ -7,15 +7,33 @@ namespace Learn.Data.Repository
     /// </summary>
     public class RepositoryFactory
     {
+        /// <summary>
+        /// 定义仓储
+        /// </summary>
+        /// <param name="connString">连接字符串</param>
+        /// <returns></returns>
+        public IRepository BaseRepository(string connString)
+        {
+            return new Repository(DbFactory.Base(connString, DatabaseType.SqlServer));
+        }
+        /// <summary>
+        /// 定义仓储（基础库）
+        /// </summary>
+        /// <returns></returns>
+        public IRepository BaseRepository()
+        {
+            return new Repository(DbFactory.Base());
+        }
+
+
         #region 定义仓储 Dapper
-        private static readonly string BaseDb = ConfigurationManager.ConnectionStrings["BaseDb"].ConnectionString;
         /// <summary>
         /// 定义仓储（基础库）Dapper
         /// </summary>
         /// <returns></returns>
         public IRepository BaseRepositoryDapper()
         {
-            return BaseRepositoryDapper(BaseDb);
+            return new Repository(DbFactory.Base());
         }
 
         /// <summary>
@@ -25,11 +43,7 @@ namespace Learn.Data.Repository
         /// <returns></returns>
         public IRepository BaseRepositoryDapper(string connString)
         {
-            IDatabase db = new Learn.Data.Dapper.SqlDatabase(connString);
-
-            Repository repository = new Repository(db);
-
-            return repository;
+            return new Repository(DbFactory.Base(connString, DatabaseType.SqlServer));
         }
         #endregion
     }

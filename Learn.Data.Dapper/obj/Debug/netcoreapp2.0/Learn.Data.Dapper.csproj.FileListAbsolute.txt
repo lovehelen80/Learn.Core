@@ -1,13 +1,10 @@
-D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.Dapper.deps.json
-D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.Dapper.dll
-D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.Dapper.pdb
+D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.csprojResolveAssemblyReference.cache
 D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.csproj.CoreCompileInputs.cache
 D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.AssemblyInfoInputs.cache
 D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.AssemblyInfo.cs
-D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.dll
-D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.pdb
+D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.Dapper.deps.json
+D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.Dapper.dll
 D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Core.Util.dll
 D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.dll
 D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.pdb
 D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Core.Util.pdb
-D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.csprojResolveAssemblyReference.cache

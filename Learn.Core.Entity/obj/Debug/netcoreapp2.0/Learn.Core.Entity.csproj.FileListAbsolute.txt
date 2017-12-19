@@ -1,0 +1,4 @@
+D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.csprojResolveAssemblyReference.cache
+D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.csproj.CoreCompileInputs.cache
+D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.AssemblyInfoInputs.cache
+D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.AssemblyInfo.cs

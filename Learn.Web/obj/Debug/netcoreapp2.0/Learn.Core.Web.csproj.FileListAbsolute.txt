@@ -3,9 +3,9 @@ D:\projects\Learn.Core\Learn.Web\bin\Debug\netcoreapp2.0\Learn.Core.Web.runtimec
 D:\projects\Learn.Core\Learn.Web\bin\Debug\netcoreapp2.0\Learn.Core.Web.runtimeconfig.dev.json
 D:\projects\Learn.Core\Learn.Web\bin\Debug\netcoreapp2.0\Learn.Core.Web.dll
 D:\projects\Learn.Core\Learn.Web\bin\Debug\netcoreapp2.0\Learn.Core.Web.pdb
+D:\projects\Learn.Core\Learn.Web\obj\Debug\netcoreapp2.0\Learn.Core.Web.csprojResolveAssemblyReference.cache
 D:\projects\Learn.Core\Learn.Web\obj\Debug\netcoreapp2.0\Learn.Core.Web.csproj.CoreCompileInputs.cache
 D:\projects\Learn.Core\Learn.Web\obj\Debug\netcoreapp2.0\Learn.Core.Web.AssemblyInfoInputs.cache
 D:\projects\Learn.Core\Learn.Web\obj\Debug\netcoreapp2.0\Learn.Core.Web.AssemblyInfo.cs
 D:\projects\Learn.Core\Learn.Web\obj\Debug\netcoreapp2.0\Learn.Core.Web.dll
 D:\projects\Learn.Core\Learn.Web\obj\Debug\netcoreapp2.0\Learn.Core.Web.pdb
-D:\projects\Learn.Core\Learn.Web\obj\Debug\netcoreapp2.0\Learn.Core.Web.csprojResolveAssemblyReference.cache

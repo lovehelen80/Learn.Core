@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Learn.Data.Dapper
 {
@@ -271,7 +272,7 @@ namespace Learn.Data.Dapper
                 return 0;
             }
         }
-        public int Delete<T>(Expression<Func<T, bool>> condition) where T : class,new()
+        public int Delete<T>(Expression<Func<T, bool>> condition) where T : class, new()
         {
             bool isTrans = true;
             if (dbTransaction == null)
@@ -279,7 +280,7 @@ namespace Learn.Data.Dapper
                 BeginTrans();
                 isTrans = false;
             }
-            IEnumerable<T> entities = dbTransaction.Connection.Query<T>(new SQLinq<T>(EntityAttribute.GetEntityTable<T>()).Where(condition));
+            IEnumerable<T> entities = dbTransaction.Connection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition)));
             Delete<T>(entities);
             if (!isTrans)
             {
@@ -287,6 +288,7 @@ namespace Learn.Data.Dapper
             }
             return 0;
         }
+
         public int Delete<T>(object keyValue) where T : class
         {
             T entity = dbTransaction.Connection.Query<T>(string.Format("select * from {0} where {1}=@primarykey", EntityAttribute.GetEntityTable<T>(), EntityAttribute.GetEntityKey<T>()), new { primarykey = keyValue }).FirstOrDefault();
@@ -343,7 +345,7 @@ namespace Learn.Data.Dapper
                 return 0;
             }
         }
-        public int Update<T>(Expression<Func<T, bool>> condition) where T : class,new()
+        public int Update<T>(Expression<Func<T, bool>> condition) where T : class, new()
         {
             bool isTrans = true;
             if (dbTransaction == null)
@@ -351,7 +353,7 @@ namespace Learn.Data.Dapper
                 BeginTrans();
                 isTrans = false;
             }
-            IEnumerable<T> entities = dbTransaction.Connection.Query<T>(new SQLinq<T>(EntityAttribute.GetEntityTable<T>()).Where(condition));
+            IEnumerable<T> entities = dbTransaction.Connection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition)));
             Update<T>(entities);
             if (!isTrans)
             {
@@ -367,16 +369,16 @@ namespace Learn.Data.Dapper
             using (var dbConnection = Connection)
             {
                 var sql = string.Format("select * from {0} where {1}=@primarykey", EntityAttribute.GetEntityTable<T>(), EntityAttribute.GetEntityPrimaryKey<T>());
-                var param=new { primarykey = keyValue };
+                var param = new { primarykey = keyValue };
                 var data = dbConnection.Query<T>(sql, param);
                 return data.FirstOrDefault();
             }
         }
-        public T FindEntity<T>(Expression<Func<T, bool>> condition) where T : class,new()
+        public T FindEntity<T>(Expression<Func<T, bool>> condition) where T : class, new()
         {
             using (var dbConnection = Connection)
             {
-                var data = dbConnection.Query<T>(new SQLinq<T>().Where(condition));
+                var data = dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition)));
                 return data.FirstOrDefault();
             }
         }
@@ -385,11 +387,11 @@ namespace Learn.Data.Dapper
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public IQueryable<T> IQueryable<T>() where T : class,new()
+        public IQueryable<T> IQueryable<T>() where T : class, new()
         {
             using (var dbConnection = Connection)
             {
-                return (IQueryable<T>)dbConnection.Query<T>(new SQLinq<T>());
+                return (IQueryable<T>)dbConnection.Query<T>(string.Format("select * from {0} ", EntityAttribute.GetEntityTable<T>()));
             }
         }
         /// <summary>
@@ -398,32 +400,32 @@ namespace Learn.Data.Dapper
         /// <typeparam name="T"></typeparam>
         /// <param name="condition"></param>
         /// <returns></returns>
-        public IQueryable<T> IQueryable<T>(Expression<Func<T, bool>> condition) where T : class,new()
+        public IQueryable<T> IQueryable<T>(Expression<Func<T, bool>> condition) where T : class, new()
         {
             using (var dbConnection = Connection)
             {
-                return (IQueryable<T>)dbConnection.Query<T>(new SQLinq<T>().Where(condition));
+                return (IQueryable<T>)dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition)));
             }
         }
-        public IEnumerable<T> FindList<T>() where T : class,new()
+        public IEnumerable<T> FindList<T>() where T : class, new()
         {
             using (var dbConnection = Connection)
             {
-                return dbConnection.Query<T>(new SQLinq<T>()).ToList();
+                return dbConnection.Query<T>(string.Format("select * from {0}   ", EntityAttribute.GetEntityTable<T>())).ToList();
             }
         }
-        public IEnumerable<T> FindList<T>(Func<T, object> keySelector) where T : class,new()
+        public IEnumerable<T> FindList<T>(Func<T, object> keySelector) where T : class, new()
         {
             using (var dbConnection = Connection)
             {
-                return dbConnection.Query<T>(new SQLinq<T>()).OrderBy(keySelector).ToList();
+                return dbConnection.Query<T>(string.Format("select * from {0}  ", EntityAttribute.GetEntityTable<T>())).OrderBy(keySelector).ToList();
             }
         }
-        public IEnumerable<T> FindList<T>(Expression<Func<T, bool>> condition) where T : class,new()
+        public IEnumerable<T> FindList<T>(Expression<Func<T, bool>> condition) where T : class, new()
         {
             using (var dbConnection = Connection)
             {
-                return dbConnection.Query<T>(new SQLinq<T>().Where(condition)).ToList();
+                return dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition))).ToList();
             }
         }
         public IEnumerable<T> FindList<T>(string strSql) where T : class
@@ -437,34 +439,53 @@ namespace Learn.Data.Dapper
                 return dbConnection.Query<T>(strSql, dbParameter);
             }
         }
-        public IEnumerable<T> FindList<T>(string orderField, bool isAsc, int pageSize, int pageIndex, out int total) where T : class,new()
+        public IEnumerable<T> FindList<T>(string orderField, bool isAsc, int pageSize, int pageIndex, out int total) where T : class, new()
         {
             using (var dbConnection = Connection)
             {
-                string[] _orderField = orderField.Split(',');
-                var dataLinq = new SQLinq<T>();
-                foreach (string item in _orderField)
+                string[] _order = orderField.Split(',');
+                var dataLinq = new StringBuilder(string.Format("select t.* from {0} as t  ORDER BY ", EntityAttribute.GetEntityTable<T>()));
+                int fieldCount = 0;
+                foreach (string item in _order)
                 {
+                    string _orderPart = item;
+                    _orderPart = Regex.Replace(_orderPart, @"\s+", " ");
+                    string[] _orderArry = _orderPart.Split(' ');
+                    string _orderField = _orderArry[0];
+                    bool sort = isAsc;
+                    if (_orderArry.Length == 2)
+                    {
+                        isAsc = _orderArry[1].ToUpper() == "ASC" ? true : false;
+                    }
                     var parameter = Expression.Parameter(typeof(T), "t");
-                    var property = typeof(T).GetProperty(item);
+                    var property = typeof(T).GetProperty(_orderField);
                     var propertyAccess = Expression.MakeMemberAccess(parameter, property);
                     Expression<Func<T, object>> orderBy = t => propertyAccess;
-                    dataLinq.OrderByExpressions.Add(new SQLinq<T>.OrderByExpression { Ascending = isAsc, Expression = orderBy });
+                    if (fieldCount == _order.Length)
+                    {
+                        dataLinq.Append($" {parameter} {(isAsc ? "ASC" : "DESC")}");
+                    }
+                    else
+                    {
+                        dataLinq.Append($" {parameter} {(isAsc ? "ASC" : "DESC")},");
+                    }
+                    fieldCount++;
                 }
-                var dataQuery = dbConnection.Query<T>(dataLinq);
+                var dataQuery = dbConnection.Query<T>(dataLinq.ToString());
                 total = dataQuery.Count();
                 var data = dataQuery.Skip<T>(pageSize * (pageIndex - 1)).Take<T>(pageSize).AsQueryable();
                 return data.ToList();
             }
         }
-        public IEnumerable<T> FindList<T>(Expression<Func<T, bool>> condition, string orderField, bool isAsc, int pageSize, int pageIndex, out int total) where T : class,new()
+        public IEnumerable<T> FindList<T>(Expression<Func<T, bool>> condition, string orderField, bool isAsc, int pageSize, int pageIndex, out int total) where T : class, new()
         {
             using (var dbConnection = Connection)
             {
-                string[] _orderField = orderField.Split(',');
+                string[] _order = orderField.Split(',');
                 var dataLinq = new SQLinq<T>().Where(condition);
-                foreach (string item in _orderField)
+                foreach (string item in _order)
                 {
+
                     var parameter = Expression.Parameter(typeof(T), "t");
                     var property = typeof(T).GetProperty(item);
                     var propertyAccess = Expression.MakeMemberAccess(parameter, property);

@@ -39,7 +39,7 @@ namespace Learn.Data.Dapper
         {
             get
             {
-                DbConnection dbconnection = new OleDbConnection(connectionString);
+                DbConnection dbconnection = new OracleConnection(connectionString);
                 dbconnection.Open();
                 return dbconnection;
             }
