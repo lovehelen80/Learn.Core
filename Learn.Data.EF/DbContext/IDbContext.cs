@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity.Infrastructure;
 
-namespace Learn.Data.EF
+namespace Learn.Core.Data.EF
 {
     /// <summary>
     /// 创建人：翁建勋

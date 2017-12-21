@@ -2316,7 +2316,7 @@
       ]
     },
     "System.ComponentModel.Primitives/4.3.0": {
-      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "sha512": "Hdya1OE3XfxsG7DvsjvjjdJqf7w54A0p52sxZ2OP6xPcB0FaJd08oITx9+6d2VAVjiZ1iTtWtHYTGJrOuCnznw==",
       "type": "package",
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
@@ -4775,6 +4775,7 @@
   },
   "packageFolders": {
     "C:\\Users\\DELL\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -4783,18 +4784,20 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\projects\\Learn.Core\\Learn.Data\\Learn.Data.csproj",
-      "projectName": "Learn.Data",
-      "projectPath": "D:\\projects\\Learn.Core\\Learn.Data\\Learn.Data.csproj",
+      "projectUniqueName": "D:\\projects\\Learn.Core\\Learn.Data\\Learn.Core.Data.csproj",
+      "projectName": "Learn.Core.Data",
+      "projectPath": "D:\\projects\\Learn.Core\\Learn.Data\\Learn.Core.Data.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "D:\\projects\\Learn.Core\\Learn.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -4822,19 +4825,19 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "MySql.Data": {
-            "target": "Package",
-            "version": "6.10.5"
-          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
+          },
+          "MySql.Data": {
+            "target": "Package",
+            "version": "[6.10.5, )"
           },
           "System.Data.SqlClient": {
             "target": "Package",
-            "version": "4.4.0"
+            "version": "[4.4.0, )"
           }
         },
         "imports": [

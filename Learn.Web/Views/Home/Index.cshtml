@@ -1,6 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+        BaseInfo();
+    });
+    function BaseInfo() {
+        $.ajax({
+            url: '/Home/GetPageListJson',
+            data: {
+                queryJson: "{\"AuthorKind\":\"CurrentAuditUserId\"}",
+                rows: 10,
+                page: 1,
+                sidx: "CreateDate",
+                sord: "desc",
+            },
+            type: "get",
+            async: false,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
+    }
+</script>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
     <ol class="carousel-indicators">

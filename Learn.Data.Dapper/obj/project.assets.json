@@ -1226,6 +1226,21 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
+      "Learn.Core.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.0",
+        "dependencies": {
+          "Learn.Core.Util": "1.0.0",
+          "MySql.Data": "6.10.5",
+          "System.Data.SqlClient": "4.4.0"
+        },
+        "compile": {
+          "bin/placeholder/Learn.Core.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Learn.Core.Data.dll": {}
+        }
+      },
       "Learn.Core.Util/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.0",
@@ -1239,21 +1254,6 @@
         },
         "runtime": {
           "bin/placeholder/Learn.Core.Util.dll": {}
-        }
-      },
-      "Learn.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
-        "dependencies": {
-          "Learn.Core.Util": "1.0.0",
-          "MySql.Data": "6.10.5",
-          "System.Data.SqlClient": "4.4.0"
-        },
-        "compile": {
-          "bin/placeholder/Learn.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Learn.Data.dll": {}
         }
       }
     }
@@ -2296,7 +2296,7 @@
       ]
     },
     "System.ComponentModel.Primitives/4.3.0": {
-      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "sha512": "Hdya1OE3XfxsG7DvsjvjjdJqf7w54A0p52sxZ2OP6xPcB0FaJd08oITx9+6d2VAVjiZ1iTtWtHYTGJrOuCnznw==",
       "type": "package",
       "path": "system.componentmodel.primitives/4.3.0",
       "files": [
@@ -4749,27 +4749,27 @@
         "system.xml.xmldocument.nuspec"
       ]
     },
+    "Learn.Core.Data/1.0.0": {
+      "type": "project",
+      "path": "../Learn.Data/Learn.Core.Data.csproj",
+      "msbuildProject": "../Learn.Data/Learn.Core.Data.csproj"
+    },
     "Learn.Core.Util/1.0.0": {
       "type": "project",
       "path": "../Learn.Core.Util/Learn.Core.Util.csproj",
       "msbuildProject": "../Learn.Core.Util/Learn.Core.Util.csproj"
-    },
-    "Learn.Data/1.0.0": {
-      "type": "project",
-      "path": "../Learn.Data/Learn.Data.csproj",
-      "msbuildProject": "../Learn.Data/Learn.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Dapper >= 1.50.4",
-      "Learn.Core.Util >= 1.0.0",
-      "Learn.Data >= 1.0.0",
+      "Learn.Core.Data >= 1.0.0",
       "Microsoft.NETCore.App >= 2.0.0"
     ]
   },
   "packageFolders": {
     "C:\\Users\\DELL\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -4778,18 +4778,20 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\projects\\Learn.Core\\Learn.Data.Dapper\\Learn.Data.Dapper.csproj",
-      "projectName": "Learn.Data.Dapper",
-      "projectPath": "D:\\projects\\Learn.Core\\Learn.Data.Dapper\\Learn.Data.Dapper.csproj",
+      "projectUniqueName": "D:\\projects\\Learn.Core\\Learn.Data.Dapper\\Learn.Core.Data.Dapper.csproj",
+      "projectName": "Learn.Core.Data.Dapper",
+      "projectPath": "D:\\projects\\Learn.Core\\Learn.Data.Dapper\\Learn.Core.Data.Dapper.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
       "outputPath": "D:\\projects\\Learn.Core\\Learn.Data.Dapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -4802,11 +4804,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\projects\\Learn.Core\\Learn.Core.Util\\Learn.Core.Util.csproj": {
-              "projectPath": "D:\\projects\\Learn.Core\\Learn.Core.Util\\Learn.Core.Util.csproj"
-            },
-            "D:\\projects\\Learn.Core\\Learn.Data\\Learn.Data.csproj": {
-              "projectPath": "D:\\projects\\Learn.Core\\Learn.Data\\Learn.Data.csproj"
+            "D:\\projects\\Learn.Core\\Learn.Data\\Learn.Core.Data.csproj": {
+              "projectPath": "D:\\projects\\Learn.Core\\Learn.Data\\Learn.Core.Data.csproj"
             }
           }
         }
@@ -4822,12 +4821,12 @@
         "dependencies": {
           "Dapper": {
             "target": "Package",
-            "version": "1.50.4"
+            "version": "[1.50.4, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           }
         },

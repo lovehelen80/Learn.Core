@@ -1,4 +1,4 @@
-﻿namespace LeaRun.Util.WebControl
+﻿namespace Learn.Core.Util.WebControl
 {
     /// <summary>
     /// 分页参数

@@ -8,3 +8,6 @@ D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Core.Util
 D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.dll
 D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.pdb
 D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Core.Util.pdb
+D:\projects\Learn.Core\Learn.Data.Dapper\bin\Debug\netcoreapp2.0\Learn.Data.Dapper.pdb
+D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.dll
+D:\projects\Learn.Core\Learn.Data.Dapper\obj\Debug\netcoreapp2.0\Learn.Data.Dapper.pdb

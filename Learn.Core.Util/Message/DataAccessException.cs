@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Runtime.Serialization;
 
-namespace Learn.Util
+namespace Learn.Core.Util
 {
     /// <summary>
     /// 数据访问层异常类，用于封装数据访问层引发的异常，以供 业务逻辑层 抓取

@@ -1,0 +1,8 @@
+D:\projects\Learn.Core\Learn.Core.Util.Code\bin\Debug\netcoreapp2.0\Learn.Core.Util.Code.deps.json
+D:\projects\Learn.Core\Learn.Core.Util.Code\bin\Debug\netcoreapp2.0\Learn.Core.Util.Code.dll
+D:\projects\Learn.Core\Learn.Core.Util.Code\bin\Debug\netcoreapp2.0\Learn.Core.Util.Code.pdb
+D:\projects\Learn.Core\Learn.Core.Util.Code\obj\Debug\netcoreapp2.0\Learn.Core.Util.Code.csproj.CoreCompileInputs.cache
+D:\projects\Learn.Core\Learn.Core.Util.Code\obj\Debug\netcoreapp2.0\Learn.Core.Util.Code.AssemblyInfoInputs.cache
+D:\projects\Learn.Core\Learn.Core.Util.Code\obj\Debug\netcoreapp2.0\Learn.Core.Util.Code.AssemblyInfo.cs
+D:\projects\Learn.Core\Learn.Core.Util.Code\obj\Debug\netcoreapp2.0\Learn.Core.Util.Code.dll
+D:\projects\Learn.Core\Learn.Core.Util.Code\obj\Debug\netcoreapp2.0\Learn.Core.Util.Code.pdb

@@ -2,7 +2,7 @@
 using System;
 using Microsoft.Extensions.Configuration;
 
-namespace Learn.Data.Repository
+namespace Learn.Core.Data.Repository
 {
     /// <summary>
     /// 数据工厂
@@ -26,10 +26,10 @@ namespace Learn.Data.Repository
             switch (DbType)
             {
                 case DatabaseType.MySql:
-                    return new Learn.Data.Dapper.MySqlDatabase(connectionString);
+                    return new Learn.Core.Data.Dapper.MySqlDatabase(connectionString);
                     break;
                 case DatabaseType.SqlServer:
-                    return new Learn.Data.Dapper.SqlDatabase(connectionString);
+                    return new Learn.Core.Data.Dapper.SqlDatabase(connectionString);
                     break;
                 case DatabaseType.Oracle:
                     return null;
@@ -52,11 +52,11 @@ namespace Learn.Data.Repository
             var providerName = iConfiguration.GetConnectionString("providerName");
             if (providerName.ToLower().Contains("mysql"))
             {
-                return new Learn.Data.Dapper.MySqlDatabase(connectionString);
+                return new Learn.Core.Data.Dapper.MySqlDatabase(connectionString);
             }
             else if (providerName.ToLower().Contains("sql"))
             {
-                return new Learn.Data.Dapper.SqlDatabase(connectionString);
+                return new Learn.Core.Data.Dapper.SqlDatabase(connectionString);
             }
             throw new Exception("暂不支持您使用的数据库类型！");
         }

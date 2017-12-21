@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Learn.Core.DAL\Learn.Core.DAL.csproj" />
+    <ProjectReference Include="..\Learn.Core.IDAL\Learn.Core.IDAL.csproj" />
+  </ItemGroup>
+
 </Project>

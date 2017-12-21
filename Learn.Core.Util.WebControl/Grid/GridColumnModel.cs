@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeaRun.Util.WebControl
+namespace Learn.Core.Util.WebControl
 {
     /// <summary>
     /// 表头属性模型

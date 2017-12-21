@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
-namespace LeaRun.Util
+namespace Learn.Core.Util
 {
     /// <summary>
     /// Enables the efficient, dynamic composition of query predicates.

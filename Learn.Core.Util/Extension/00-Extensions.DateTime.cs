@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace LeaRun.Util
+namespace Learn.Core.Util
 {
     /// <summary>
     /// 日期时间扩展

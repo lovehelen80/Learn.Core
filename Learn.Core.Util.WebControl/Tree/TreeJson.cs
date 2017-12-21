@@ -1,10 +1,10 @@
-﻿using LeaRun.Util.WebControl;
+﻿using Learn.Core.Util.WebControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LeaRun.Util.WebControl
+namespace Learn.Core.Util.WebControl
 {
     /// <summary>
     /// 构造树形Json

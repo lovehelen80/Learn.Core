@@ -128,26 +128,30 @@ namespace Learn.Core.Entity
         /// <returns></returns>
         private Dictionary<string, object> GetDefaultForCreate()
         {
-            //修复部分情况用户未登陆时提交数据异常
-            if (OperatorProvider.Provider == null || OperatorProvider.Provider.Current() == null)
-            {
-                return new Dictionary<string, object>
+            return new Dictionary<string, object>
                 {
-                    {"createdate", DateTime.Now},
                     {"modifydate", DateTime.Now}
                 };
-            }
-            var user = OperatorProvider.Provider.Current();
-            var dict = new Dictionary<string, object>
-            {
-                {"createdate", DateTime.Now},
-                {"createuserid", user.UserId},
-                {"createusername", user.UserName},
-                {"modifydate", DateTime.Now},
-                {"modifyuserid", user.UserId},
-                {"modifyusername", user.UserName}
-            };
-            return dict;
+            ////修复部分情况用户未登陆时提交数据异常
+            //if (OperatorProvider.Provider == null || OperatorProvider.Provider.Current() == null)
+            //{
+            //    return new Dictionary<string, object>
+            //    {
+            //        {"createdate", DateTime.Now},
+            //        {"modifydate", DateTime.Now}
+            //    };
+            //}
+            //var user = OperatorProvider.Provider.Current();
+            //var dict = new Dictionary<string, object>
+            //{
+            //    {"createdate", DateTime.Now},
+            //    {"createuserid", user.UserId},
+            //    {"createusername", user.UserName},
+            //    {"modifydate", DateTime.Now},
+            //    {"modifyuserid", user.UserId},
+            //    {"modifyusername", user.UserName}
+            //};
+            //return dict;
         }
 
         /// <summary>
@@ -156,22 +160,26 @@ namespace Learn.Core.Entity
         /// <returns></returns>
         private Dictionary<string, object> GetDefaultForModify()
         {
-            //修复部分情况用户未登陆时提交数据异常
-            if (OperatorProvider.Provider == null || OperatorProvider.Provider.Current() == null)
-            {
-                return new Dictionary<string, object>
+            return new Dictionary<string, object>
                 {
                     {"modifydate", DateTime.Now}
                 };
-            }
-            var user = OperatorProvider.Provider.Current();
-            var dict = new Dictionary<string, object>
-            {
-                {"modifydate", DateTime.Now},
-                {"modifyuserid", user.UserId},
-                {"modifyusername", user.UserName}
-            };
-            return dict;
+            ////修复部分情况用户未登陆时提交数据异常
+            //if (OperatorProvider.Provider == null || OperatorProvider.Provider.Current() == null)
+            //{
+            //    return new Dictionary<string, object>
+            //    {
+            //        {"modifydate", DateTime.Now}
+            //    };
+            //}
+            //var user = OperatorProvider.Provider.Current();
+            //var dict = new Dictionary<string, object>
+            //{
+            //    {"modifydate", DateTime.Now},
+            //    {"modifyuserid", user.UserId},
+            //    {"modifyusername", user.UserName}
+            //};
+            //return dict;
         }
     }
 }

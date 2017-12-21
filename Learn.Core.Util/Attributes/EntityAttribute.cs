@@ -68,5 +68,23 @@ namespace Learn.Core.Util
             }
             return entityName;
         }
+        /// <summary>
+        /// 获取实体对象表名
+        /// </summary>
+        /// <param name="entityType"></param>
+        /// <returns></returns>
+        public static string GetTable(Type entityType)
+        {
+            try
+            {
+                var table = entityType.GetCustomAttributes(typeof(TableAttribute), true);
+                return ((TableAttribute)table[0]).Name;
+            }
+            catch
+            {
+                throw new Exception(ExceptionText.NoTableName);
+            }
+
+        }
     }
 }

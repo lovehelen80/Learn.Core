@@ -8,4 +8,3 @@ D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.Assembly
 D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.AssemblyInfo.cs
 D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.dll
 D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.pdb
-D:\projects\Learn.Core\Learn.API\obj\Debug\netcoreapp2.0\Learn.Core.API.csprojResolveAssemblyReference.cache

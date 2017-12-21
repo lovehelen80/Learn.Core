@@ -6,7 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 
-namespace Learn.Data.EF.Extension
+namespace Learn.Core.Data.EF.Extension
 {
     /// <summary>
     /// 日 期：2015.10.10

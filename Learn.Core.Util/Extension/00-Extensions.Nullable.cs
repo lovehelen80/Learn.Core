@@ -1,4 +1,4 @@
-﻿namespace LeaRun.Util
+﻿namespace Learn.Core.Util
 {
     /// <summary>
     /// 扩展 - 可空类型

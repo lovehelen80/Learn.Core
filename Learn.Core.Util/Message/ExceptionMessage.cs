@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
-namespace Learn.Util
+namespace Learn.Core.Util
 {
     /// <summary>
     /// 异常信息封装类

@@ -4,7 +4,7 @@ using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Reflection;
 
-namespace Learn.Data.EF
+namespace Learn.Core.Data.EF
 {
     /// <summary>
     /// 日 期：2015.10.10
@@ -30,7 +30,7 @@ namespace Learn.Data.EF
         #region 重载
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            string assembleFileName = Assembly.GetExecutingAssembly().CodeBase.Replace("Learn.Data.EF.DLL", "Learn.Core.Mapping.dll").Replace("file:///", "");
+            string assembleFileName = Assembly.GetExecutingAssembly().CodeBase.Replace("Learn.Core.Data.EF.DLL", "Learn.Core.Mapping.dll").Replace("file:///", "");
             Assembly asm = Assembly.LoadFile(assembleFileName);
             var typesToRegister = asm.GetTypes()
             .Where(type => !String.IsNullOrEmpty(type.Namespace))

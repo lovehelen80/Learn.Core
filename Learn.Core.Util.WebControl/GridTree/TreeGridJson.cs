@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LeaRun.Util.WebControl
+namespace Learn.Core.Util.WebControl
 {
     /// <summary>
     /// 构造树形表格Json

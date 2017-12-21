@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace Learn.Data.Repository
+namespace Learn.Core.Data.Repository
 {
     /// <summary>
     /// 定义仓储模型工厂

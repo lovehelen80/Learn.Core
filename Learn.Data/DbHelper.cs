@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.Common;
 
-namespace Learn.Data
+namespace Learn.Core.Data
 {
     /// <summary>
     /// 数据库访问扩展

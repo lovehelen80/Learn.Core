@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using Learn.Core.Util;
-using Learn.Util;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +10,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Learn.Data.Dapper
+namespace Learn.Core.Data.Dapper
 {
     /// <summary>
     /// 创建人：wengjianxun
@@ -280,7 +279,7 @@ namespace Learn.Data.Dapper
                 BeginTrans();
                 isTrans = false;
             }
-            IEnumerable<T> entities = dbTransaction.Connection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition)));
+            IEnumerable<T> entities = dbTransaction.Connection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.GetSqlByExpression(condition.Body)));
             Delete<T>(entities);
             if (!isTrans)
             {
@@ -353,7 +352,7 @@ namespace Learn.Data.Dapper
                 BeginTrans();
                 isTrans = false;
             }
-            IEnumerable<T> entities = dbTransaction.Connection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition)));
+            IEnumerable<T> entities = dbTransaction.Connection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.GetSqlByExpression(condition.Body)));
             Update<T>(entities);
             if (!isTrans)
             {
@@ -378,7 +377,7 @@ namespace Learn.Data.Dapper
         {
             using (var dbConnection = Connection)
             {
-                var data = dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition)));
+                var data = dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.GetSqlByExpression(condition.Body)));
                 return data.FirstOrDefault();
             }
         }
@@ -404,7 +403,7 @@ namespace Learn.Data.Dapper
         {
             using (var dbConnection = Connection)
             {
-                return (IQueryable<T>)dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition)));
+                return (IQueryable<T>)dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.GetSqlByExpression(condition.Body)));
             }
         }
         public IEnumerable<T> FindList<T>() where T : class, new()
@@ -425,7 +424,7 @@ namespace Learn.Data.Dapper
         {
             using (var dbConnection = Connection)
             {
-                return dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.DealExpress(condition))).ToList();
+                return dbConnection.Query<T>(string.Format("select * from {0} where {1}  ", EntityAttribute.GetEntityTable<T>(), ExpressionHelper.GetSqlByExpression(condition.Body))).ToList();
             }
         }
         public IEnumerable<T> FindList<T>(string strSql) where T : class
@@ -444,7 +443,7 @@ namespace Learn.Data.Dapper
             using (var dbConnection = Connection)
             {
                 string[] _order = orderField.Split(',');
-                var dataLinq = new StringBuilder(string.Format("select t.* from {0} as t  ORDER BY ", EntityAttribute.GetEntityTable<T>()));
+                var dataLinq = new StringBuilder(string.Format("select * from {0}   ORDER BY ", EntityAttribute.GetEntityTable<T>()));
                 int fieldCount = 0;
                 foreach (string item in _order)
                 {
@@ -457,13 +456,12 @@ namespace Learn.Data.Dapper
                     {
                         isAsc = _orderArry[1].ToUpper() == "ASC" ? true : false;
                     }
-                    var parameter = Expression.Parameter(typeof(T), "t");
+                    var parameter = Expression.Parameter(typeof(T), EntityAttribute.GetEntityTable<T>());
                     var property = typeof(T).GetProperty(_orderField);
                     var propertyAccess = Expression.MakeMemberAccess(parameter, property);
-                    Expression<Func<T, object>> orderBy = t => propertyAccess;
-                    if (fieldCount == _order.Length)
+                    if (fieldCount == _order.Length - 1)
                     {
-                        dataLinq.Append($" {parameter} {(isAsc ? "ASC" : "DESC")}");
+                        dataLinq.Append($" {propertyAccess} {(isAsc ? "ASC" : "DESC")}");
                     }
                     else
                     {
@@ -482,15 +480,31 @@ namespace Learn.Data.Dapper
             using (var dbConnection = Connection)
             {
                 string[] _order = orderField.Split(',');
-                var dataLinq = new SQLinq<T>().Where(condition);
+                var dataLinq = $"select * from { EntityAttribute.GetEntityTable<T>()} where {ExpressionHelper.GetSqlByExpression(condition.Body)} ORDER BY";
+                int fieldCount = 0;
                 foreach (string item in _order)
                 {
-
-                    var parameter = Expression.Parameter(typeof(T), "t");
-                    var property = typeof(T).GetProperty(item);
+                    string _orderPart = item;
+                    _orderPart = Regex.Replace(_orderPart, @"\s+", " ");
+                    string[] _orderArry = _orderPart.Split(' ');
+                    string _orderField = _orderArry[0];
+                    bool sort = isAsc;
+                    if (_orderArry.Length == 2)
+                    {
+                        isAsc = _orderArry[1].ToUpper() == "ASC" ? true : false;
+                    }
+                    var parameter = Expression.Parameter(typeof(T), EntityAttribute.GetEntityTable<T>());
+                    var property = typeof(T).GetProperty(_orderField);
                     var propertyAccess = Expression.MakeMemberAccess(parameter, property);
-                    Expression<Func<T, object>> orderBy = t => propertyAccess;
-                    dataLinq.OrderByExpressions.Add(new SQLinq<T>.OrderByExpression { Ascending = isAsc, Expression = orderBy });
+                    if (fieldCount == _order.Length - 1)
+                    {
+                        dataLinq += ($" {propertyAccess} {(isAsc ? "ASC" : "DESC")}");
+                    }
+                    else
+                    {
+                        dataLinq += ($" {propertyAccess} {(isAsc ? "ASC" : "DESC")},");
+                    }
+                    fieldCount++;
                 }
                 var dataQuery = dbConnection.Query<T>(dataLinq);
                 total = dataQuery.Count();

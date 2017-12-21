@@ -1,4 +1,4 @@
-﻿using LeaRun.Util.WebControl;
+﻿using Learn.Core.Util.WebControl;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +6,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Learn.Data.Repository
+namespace Learn.Core.Data.Repository
 {
     /// <summary>
     ///

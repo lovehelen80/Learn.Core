@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 
-namespace Learn.Data
+namespace Learn.Core.Data
 {
     /// <summary>
     /// 描 述：SQL参数化

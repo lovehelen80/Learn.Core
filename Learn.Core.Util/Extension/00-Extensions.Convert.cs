@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LeaRun.Util
+namespace Learn.Core.Util
 {
     /// <summary>
     /// 类型转换扩展

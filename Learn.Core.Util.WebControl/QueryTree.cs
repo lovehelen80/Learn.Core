@@ -1,13 +1,10 @@
-﻿using LeaRun.Util;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
-namespace LeaRun.Util.WebControl
+namespace Learn.Core.Util.WebControl
 {
     /// <summary>
     /// 树形结构查询

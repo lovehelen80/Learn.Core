@@ -1,6 +1,5 @@
-﻿using Learn.Data.EF.Extension;
-using Learn.Util;
-using LeaRun.Util;
+﻿using Learn.Core.Data.EF.Extension;
+using Learn.Core.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,7 +14,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Learn.Data.EF
+namespace Learn.Core.Data.EF
 {
     /// <summary>
     /// 日 期：2015.10.10

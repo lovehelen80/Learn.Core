@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace LeaRun.Util
+namespace Learn.Core.Util
 {
     /// <summary>
     /// 格式化扩展

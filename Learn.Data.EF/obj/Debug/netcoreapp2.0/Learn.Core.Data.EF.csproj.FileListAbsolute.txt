@@ -1,0 +1,13 @@
+D:\projects\Learn.Core\Learn.Data.EF\bin\Debug\netcoreapp2.0\Learn.Core.Data.EF.deps.json
+D:\projects\Learn.Core\Learn.Data.EF\bin\Debug\netcoreapp2.0\Learn.Core.Data.EF.dll
+D:\projects\Learn.Core\Learn.Data.EF\bin\Debug\netcoreapp2.0\Learn.Core.Data.EF.pdb
+D:\projects\Learn.Core\Learn.Data.EF\bin\Debug\netcoreapp2.0\Learn.Core.Data.dll
+D:\projects\Learn.Core\Learn.Data.EF\bin\Debug\netcoreapp2.0\Learn.Core.Util.dll
+D:\projects\Learn.Core\Learn.Data.EF\bin\Debug\netcoreapp2.0\Learn.Core.Data.pdb
+D:\projects\Learn.Core\Learn.Data.EF\bin\Debug\netcoreapp2.0\Learn.Core.Util.pdb
+D:\projects\Learn.Core\Learn.Data.EF\obj\Debug\netcoreapp2.0\Learn.Core.Data.EF.csprojResolveAssemblyReference.cache
+D:\projects\Learn.Core\Learn.Data.EF\obj\Debug\netcoreapp2.0\Learn.Core.Data.EF.csproj.CoreCompileInputs.cache
+D:\projects\Learn.Core\Learn.Data.EF\obj\Debug\netcoreapp2.0\Learn.Core.Data.EF.AssemblyInfoInputs.cache
+D:\projects\Learn.Core\Learn.Data.EF\obj\Debug\netcoreapp2.0\Learn.Core.Data.EF.AssemblyInfo.cs
+D:\projects\Learn.Core\Learn.Data.EF\obj\Debug\netcoreapp2.0\Learn.Core.Data.EF.dll
+D:\projects\Learn.Core\Learn.Data.EF\obj\Debug\netcoreapp2.0\Learn.Core.Data.EF.pdb

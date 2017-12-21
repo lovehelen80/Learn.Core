@@ -1,7 +1,5 @@
 ﻿using Dapper;
 using Learn.Core.Util;
-using Learn.Util;
-using LeaRun.Util;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -11,9 +9,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 
-
-namespace Learn.Data.Dapper
+namespace Learn.Core.Data.Dapper
 {
     /// <summary>
     ///
@@ -384,13 +382,77 @@ namespace Learn.Data.Dapper
         }
         public IEnumerable<T> FindList<T>(string orderField, bool isAsc, int pageSize, int pageIndex, out int total) where T : class,new()
         {
-            total = 0;
-            return null;
+            using (var dbConnection = Connection)
+            {
+                string[] _order = orderField.Split(',');
+                var dataLinq = $"select * from { EntityAttribute.GetEntityTable<T>()} ORDER BY";
+                int fieldCount = 0;
+                foreach (string item in _order)
+                {
+                    string _orderPart = item;
+                    _orderPart = Regex.Replace(_orderPart, @"\s+", " ");
+                    string[] _orderArry = _orderPart.Split(' ');
+                    string _orderField = _orderArry[0];
+                    bool sort = isAsc;
+                    if (_orderArry.Length == 2)
+                    {
+                        isAsc = _orderArry[1].ToUpper() == "ASC" ? true : false;
+                    }
+                    var parameter = Expression.Parameter(typeof(T), EntityAttribute.GetEntityTable<T>());
+                    var property = typeof(T).GetProperty(_orderField);
+                    var propertyAccess = Expression.MakeMemberAccess(parameter, property);
+                    if (fieldCount == _order.Length - 1)
+                    {
+                        dataLinq += ($" {propertyAccess} {(isAsc ? "ASC" : "DESC")}");
+                    }
+                    else
+                    {
+                        dataLinq += ($" {propertyAccess} {(isAsc ? "ASC" : "DESC")},");
+                    }
+                    fieldCount++;
+                }
+                var dataQuery = dbConnection.Query<T>(dataLinq);
+                total = dataQuery.Count();
+                var data = dataQuery.Skip<T>(pageSize * (pageIndex - 1)).Take<T>(pageSize).AsQueryable();
+                return data.ToList();
+            }
         }
         public IEnumerable<T> FindList<T>(Expression<Func<T, bool>> condition, string orderField, bool isAsc, int pageSize, int pageIndex, out int total) where T : class,new()
         {
-            total = 0;
-            return null;
+            using (var dbConnection = Connection)
+            {
+                string[] _order = orderField.Split(',');
+                var dataLinq = $"select * from { EntityAttribute.GetEntityTable<T>()} where {ExpressionHelper.GetSqlByExpression(condition.Body)} ORDER BY";
+                int fieldCount = 0;
+                foreach (string item in _order)
+                {
+                    string _orderPart = item;
+                    _orderPart = Regex.Replace(_orderPart, @"\s+", " ");
+                    string[] _orderArry = _orderPart.Split(' ');
+                    string _orderField = _orderArry[0];
+                    bool sort = isAsc;
+                    if (_orderArry.Length == 2)
+                    {
+                        isAsc = _orderArry[1].ToUpper() == "ASC" ? true : false;
+                    }
+                    var parameter = Expression.Parameter(typeof(T), EntityAttribute.GetEntityTable<T>());
+                    var property = typeof(T).GetProperty(_orderField);
+                    var propertyAccess = Expression.MakeMemberAccess(parameter, property);
+                    if (fieldCount == _order.Length - 1)
+                    {
+                        dataLinq += ($" {propertyAccess} {(isAsc ? "ASC" : "DESC")}");
+                    }
+                    else
+                    {
+                        dataLinq += ($" {propertyAccess} {(isAsc ? "ASC" : "DESC")},");
+                    }
+                    fieldCount++;
+                }
+                var dataQuery = dbConnection.Query<T>(dataLinq);
+                total = dataQuery.Count();
+                var data = dataQuery.Skip<T>(pageSize * (pageIndex - 1)).Take<T>(pageSize).AsQueryable();
+                return data.ToList();
+            }
         }
         public IEnumerable<T> FindList<T>(string strSql, string orderField, bool isAsc, int pageSize, int pageIndex, out int total) where T : class
         {

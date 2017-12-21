@@ -5,7 +5,7 @@ using System.Data;
 using System.Dynamic;
 using System.Reflection;
 
-namespace Learn.Data
+namespace Learn.Core.Data
 {
     /// <summary>
     ///

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Core.Web", "Learn.Web\Learn.Core.Web.csproj", "{42A1E7DF-5EA6-4378-BDDB-3E61F2A42041}"
 EndProject
@@ -27,21 +27,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "应用程序", "应用程�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "应用数据库核心层", "应用数据库核心层", "{A7E50C9E-DC37-462A-BB83-202AE5D8D205}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Data", "Learn.Data\Learn.Data.csproj", "{5261F04C-A92A-4B24-B96E-FA18E0ED8F9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Core.Data", "Learn.Data\Learn.Core.Data.csproj", "{5261F04C-A92A-4B24-B96E-FA18E0ED8F9D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Data.Dapper", "Learn.Data.Dapper\Learn.Data.Dapper.csproj", "{1330E3C4-5460-4843-81BA-84CD05B5FB48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Core.Data.Dapper", "Learn.Data.Dapper\Learn.Core.Data.Dapper.csproj", "{1330E3C4-5460-4843-81BA-84CD05B5FB48}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Data.Repository", "Learn.Data.Repository\Learn.Data.Repository.csproj", "{3FACF5B7-FA3E-48B7-B0CE-002FF2D33A60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Core.Data.Repository", "Learn.Data.Repository\Learn.Core.Data.Repository.csproj", "{3FACF5B7-FA3E-48B7-B0CE-002FF2D33A60}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Core.Util.WebControl", "Learn.Core.Util.WebControl\Learn.Core.Util.WebControl.csproj", "{740BE65E-3BB0-4D2E-BF6A-DDA8DEEA38C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Data.EF", "Learn.Data.EF\Learn.Data.EF.csproj", "{AEC285A9-7B0E-452F-A54D-3EB306F2250D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Core.Data.EF", "Learn.Data.EF\Learn.Core.Data.EF.csproj", "{AEC285A9-7B0E-452F-A54D-3EB306F2250D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{479ECEF9-1768-4965-9861-834556514582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.Core.Entity", "Learn.Core.Entity\Learn.Core.Entity.csproj", "{DBEDAA3A-A2E5-41CF-B400-CA461ECEDFFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learn.Core.Entity", "Learn.Core.Entity\Learn.Core.Entity.csproj", "{DBEDAA3A-A2E5-41CF-B400-CA461ECEDFFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.Core.Util.SQLinq", "Learn.Core.Util.SQLinq\Learn.Core.Util.SQLinq.csproj", "{0DE5394C-9E52-4430-A716-3F26B3F5CCF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Learn.Core.Util.Code", "Learn.Core.Util.Code\Learn.Core.Util.Code.csproj", "{BD1A3AE9-48DA-43A1-90B2-FCD42166BFFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,10 +101,10 @@ Global
 		{DBEDAA3A-A2E5-41CF-B400-CA461ECEDFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBEDAA3A-A2E5-41CF-B400-CA461ECEDFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBEDAA3A-A2E5-41CF-B400-CA461ECEDFFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0DE5394C-9E52-4430-A716-3F26B3F5CCF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0DE5394C-9E52-4430-A716-3F26B3F5CCF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0DE5394C-9E52-4430-A716-3F26B3F5CCF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0DE5394C-9E52-4430-A716-3F26B3F5CCF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1A3AE9-48DA-43A1-90B2-FCD42166BFFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1A3AE9-48DA-43A1-90B2-FCD42166BFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1A3AE9-48DA-43A1-90B2-FCD42166BFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1A3AE9-48DA-43A1-90B2-FCD42166BFFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,7 +124,7 @@ Global
 		{AEC285A9-7B0E-452F-A54D-3EB306F2250D} = {A7E50C9E-DC37-462A-BB83-202AE5D8D205}
 		{479ECEF9-1768-4965-9861-834556514582} = {A8F39E20-B045-41C1-AA56-F71F7EB97FE4}
 		{DBEDAA3A-A2E5-41CF-B400-CA461ECEDFFA} = {479ECEF9-1768-4965-9861-834556514582}
-		{0DE5394C-9E52-4430-A716-3F26B3F5CCF1} = {EF1E720B-1C22-4A9A-BAD7-232338B91EB7}
+		{BD1A3AE9-48DA-43A1-90B2-FCD42166BFFF} = {EF1E720B-1C22-4A9A-BAD7-232338B91EB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7B939CE-5017-4341-8E01-33CE96ECDDBA}

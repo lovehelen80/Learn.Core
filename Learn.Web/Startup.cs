@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Learn.Core.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -20,8 +21,7 @@ namespace Learn.Web
 
         public void ConfigureServices(IServiceCollection services)
         {
-            //增加读取config
-            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddHttpContextAccessor();
             services.AddMvc();
         }
 
@@ -38,7 +38,8 @@ namespace Learn.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            //获取httpContext
+            app.UseStaticHttpContext();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>

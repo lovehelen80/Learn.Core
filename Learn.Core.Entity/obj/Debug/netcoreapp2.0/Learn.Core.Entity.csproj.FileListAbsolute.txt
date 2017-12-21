@@ -2,3 +2,10 @@ D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Enti
 D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.csproj.CoreCompileInputs.cache
 D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.AssemblyInfoInputs.cache
 D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.AssemblyInfo.cs
+D:\projects\Learn.Core\Learn.Core.Entity\bin\Debug\netcoreapp2.0\Learn.Core.Entity.deps.json
+D:\projects\Learn.Core\Learn.Core.Entity\bin\Debug\netcoreapp2.0\Learn.Core.Entity.dll
+D:\projects\Learn.Core\Learn.Core.Entity\bin\Debug\netcoreapp2.0\Learn.Core.Entity.pdb
+D:\projects\Learn.Core\Learn.Core.Entity\bin\Debug\netcoreapp2.0\Learn.Core.Util.dll
+D:\projects\Learn.Core\Learn.Core.Entity\bin\Debug\netcoreapp2.0\Learn.Core.Util.pdb
+D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.dll
+D:\projects\Learn.Core\Learn.Core.Entity\obj\Debug\netcoreapp2.0\Learn.Core.Entity.pdb

@@ -1,7 +1,6 @@
 D:\projects\Learn.Core\Learn.Core.Cache\bin\Debug\netcoreapp2.0\Learn.Core.Cache.deps.json
 D:\projects\Learn.Core\Learn.Core.Cache\bin\Debug\netcoreapp2.0\Learn.Core.Cache.dll
 D:\projects\Learn.Core\Learn.Core.Cache\bin\Debug\netcoreapp2.0\Learn.Core.Cache.pdb
-D:\projects\Learn.Core\Learn.Core.Cache\obj\Debug\netcoreapp2.0\Learn.Core.Cache.csprojResolveAssemblyReference.cache
 D:\projects\Learn.Core\Learn.Core.Cache\obj\Debug\netcoreapp2.0\Learn.Core.Cache.csproj.CoreCompileInputs.cache
 D:\projects\Learn.Core\Learn.Core.Cache\obj\Debug\netcoreapp2.0\Learn.Core.Cache.AssemblyInfoInputs.cache
 D:\projects\Learn.Core\Learn.Core.Cache\obj\Debug\netcoreapp2.0\Learn.Core.Cache.AssemblyInfo.cs

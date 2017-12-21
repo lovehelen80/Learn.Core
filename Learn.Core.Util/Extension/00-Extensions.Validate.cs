@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LeaRun.Util
+namespace Learn.Core.Util
 {
     /// <summary>
     /// 验证扩展

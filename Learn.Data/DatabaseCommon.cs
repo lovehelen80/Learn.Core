@@ -9,7 +9,7 @@ using System.Collections;
 using Learn.Core.Util;
 using System.ComponentModel;
 
-namespace Learn.Data
+namespace Learn.Core.Data
 {
     public class DatabaseCommon
     {

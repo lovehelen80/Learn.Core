@@ -1,4 +1,4 @@
-﻿namespace Learn.Data
+﻿namespace Learn.Core.Data
 {
     /// <summary>
     /// 日 期：2015.10.10

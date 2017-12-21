@@ -2,3 +2,16 @@ D:\projects\Learn.Core\Learn.Data.Repository\obj\Debug\netcoreapp2.0\Learn.Data.
 D:\projects\Learn.Core\Learn.Data.Repository\obj\Debug\netcoreapp2.0\Learn.Data.Repository.csproj.CoreCompileInputs.cache
 D:\projects\Learn.Core\Learn.Data.Repository\obj\Debug\netcoreapp2.0\Learn.Data.Repository.AssemblyInfoInputs.cache
 D:\projects\Learn.Core\Learn.Data.Repository\obj\Debug\netcoreapp2.0\Learn.Data.Repository.AssemblyInfo.cs
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Data.Repository.deps.json
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Data.Repository.dll
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Data.Repository.pdb
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Core.Util.dll
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.dll
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Data.Dapper.dll
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Data.dll
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Core.Util.WebControl.pdb
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Core.Util.pdb
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Data.Dapper.pdb
+D:\projects\Learn.Core\Learn.Data.Repository\bin\Debug\netcoreapp2.0\Learn.Data.pdb
+D:\projects\Learn.Core\Learn.Data.Repository\obj\Debug\netcoreapp2.0\Learn.Data.Repository.dll
+D:\projects\Learn.Core\Learn.Data.Repository\obj\Debug\netcoreapp2.0\Learn.Data.Repository.pdb
